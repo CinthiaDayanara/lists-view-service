@@ -25,4 +25,4 @@ const getLists = async (req, res) => {
     }
 };
 
-module.exports = { createList, getLists }; // ✅ Asegúrate de que est
+module.exports = { createList, getLists }; // ✅ Asegúrate de que
