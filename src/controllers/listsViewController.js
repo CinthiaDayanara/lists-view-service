@@ -1,4 +1,4 @@
-const List = require('../models/Lists'); // ✅ Verifica que este archivo existe y exporta métodos
+const List = require('../models/List'); // ✅ Verifica que este archivo existe y exporta métodos
 
 const createList = async (req, res) => {
     console.log('🔍 Body recibido:', req.body);
