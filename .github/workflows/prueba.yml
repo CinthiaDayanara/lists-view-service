@@ -1,4 +1,4 @@
-name: Deploy to AWS EC2
+name: Deploy to AWS EC2 main
 
 on:
   push:
@@ -29,6 +29,26 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY_MAIN }}
           script: |
             echo "🚀 Actualizando microservicio en AWS EC2.."
+            
+            # Instalar Docker si no está instalado
+            if ! command -v docker &> /dev/null; then
+              echo "🔧 Docker no está instalado. Instalando Docker..."
+              sudo yum update -y
+              sudo yum install docker -y
+              sudo usermod -aG docker ec2-user
+              sudo systemctl start docker
+              sudo systemctl enable docker
+            else
+              echo "✅ Docker ya está instalado."
+            fi
+
+            # Crear un usuario si no existe
+            if ! id -u ${USER} &>/dev/null; then
+              echo "👤 Usuario no encontrado, creando usuario..."
+              sudo useradd -m -s /bin/bash ${USER}
+            else
+              echo "✅ El usuario ya existe."
+            fi
 
             # Detener y eliminar el contenedor si ya existe
             if sudo docker ps -a --format '{{.Names}}' | grep -q lists-view-service_container; then
