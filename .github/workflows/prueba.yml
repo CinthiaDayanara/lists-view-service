@@ -3,7 +3,11 @@ name: Deploy to AWS EC2
 on:
   push:
     branches:
+<<<<<<< HEAD
       - master  # Cambia a "test" si deseas que se ejecute en ot
+=======
+      - tests  # Cambia a "test" si deseas q
+>>>>>>> eaf00878d4a2b8a42b7ae47b222466086830bec3
 
 jobs:
   deploy:

@@ -8,8 +8,7 @@ It provides a REST API for viewing all lists stored in the database, ensuring ef
 - Node.js
 - Express.js
 - PostgreSQL (AWS RDS)
-- Sequelize (ORM)
-- Docker
+- Sequelize (ORM
 
 ## 📂 Project Structure
 ```

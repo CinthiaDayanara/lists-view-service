@@ -11,10 +11,10 @@
   "name": "lists-view-service",
   "version": "1.0.0",
   "description": "This microservice allows **retrieving lists** in a task management system.\r It provides a REST API for viewing all lists stored in the database, ensuring efficient data access.",
-  "main": "src/server.js",
+  "main": "node src/server.js",
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
